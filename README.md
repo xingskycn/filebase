@@ -25,15 +25,15 @@ To build a new codec, you just need to satisify the `codec.Codec` interface:
 
 ```go
 type Codec interface {
-	NewDecoder(io.Reader) decoder
-	NewEncoder(io.Writer) encoder
+	NewDecoder(io.Reader) Decoder
+	NewEncoder(io.Writer) Encoder
 }
 
-type decoder interface {
+type Decoder interface {
 	Decode(v interface{}) error
 }
 
-type encoder interface {
+type Encoder interface {
 	Encode(v interface{}) error
 }
 ```
